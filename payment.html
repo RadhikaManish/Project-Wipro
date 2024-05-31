@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass - Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div class="max-w-screen-xl mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Shipping and Payment Details</h1>
+        
+        <form id="payment-form" class="space-y-4">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" id="address" name="address" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input type="text" id="pincode" name="pincode" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="city" class="form-label">City</label>
+                <input type="text" id="city" name="city" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="state" class="form-label">State</label>
+                <input type="text" id="state" name="state" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Payment Method</label>
+                <div>
+                    <input type="radio" id="cod" name="payment-method" value="cod" class="form-radio" required>
+                    <label for="cod" class="form-radio-label">Cash on Delivery</label>
+                </div><br>
+
+                <div>
+                    <input type="radio" id="upi" name="payment-method" value="upi" class="form-radio" required>
+                    <label for="upi" class="form-radio-label">Pay through UPI</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

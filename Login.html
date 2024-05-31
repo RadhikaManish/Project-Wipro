@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SecurePass</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
+                <li>
+                    <a href="http://127.0.0.1:5500/home.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/Login.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Login</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5500/Registration.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Registration</a>
+                </li>
+
+                <li>
+                    <a href="http://127.0.0.1:5500/support.html#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Support</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<center><script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <lord-icon
+        src="https://cdn.lordicon.com/bwakhnow.json"
+        trigger="loop"
+        state="loop-cycle"
+        style="width:150px;height:150px">
+    </lord-icon> </center>
+
+<!-- Form -->
+<div class="form-container"> <!-- Added a container div to center the form -->
+    
+    <form>
+        <div class="mb-6">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <input type="email" id="email1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+        </div>
+        <div class="mb-6">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+            <input data-popover-target="popover-password" data-popover-placement="bottom" type="password" id="password1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            <div data-popover id="popover-password" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+                <div class="p-3 space-y-2">
+                    <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 6 characters</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
+                        <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
+                        <div class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                        <div class="h-1 bg-gray-200 dark:bg-gray-600"></div>
+                    </div>
+                    <p>It’s better to have:</p>
+                    <ul>
+                        <li class="flex items-center mb-1">
+                            <svg class="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                            Upper & lower case letters
+                        </li>
+                        <li class="flex items-center mb-1">
+                            <svg class="w-3 h-3 me-2.5 text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            A symbol (#$&)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-3 h-3 me-2.5 text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            A longer password (min. 12 chars.)
+                        </li>
+                    </ul>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+        </div>
+        <div class="flex items-start mb-6">
+            <div class="flex items-center h-5">
+                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+            </div>
+            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+        </div>
+        
+    </form>
+    <button type="button" id="Login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</div> <!-- End of form-container -->
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBQTcpbiF1B1QkyumDZja1qSKL_4s24P7E",
+      authDomain: "authentication-8b2e5.firebaseapp.com",
+      projectId: "authentication-8b2e5",
+      storageBucket: "authentication-8b2e5.appspot.com",
+      messagingSenderId: "519264242109",
+      appId: "1:519264242109:web:e9d3493b9ea3116f0d2ad4",
+      measurementId: "G-TQJZWYH5GY"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth =getAuth();
+  
+    document.getElementById('Login').addEventListener("click",()=>{
+        let email1=document.getElementById("email1").value;
+        let password1=document.getElementById("password1").value;
+       
+        signInWithEmailAndPassword(auth,email1,password1)
+        .then((userCredential)=>{
+          const user=userCredential.user;
+          console.log(user);
+          alert(` LoginSucessfully ${email1}`);
+          window.location.href = "http://127.0.0.1:5500/home.html"
+        })
+       
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("Enter your Password and name Carefully")
+        });
+      })
+  </script>
+<!--
+<script src="localstoragelogin.js"></script>
+-->
+
+</html>

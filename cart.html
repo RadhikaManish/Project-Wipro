@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse border">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SecurePass</span>
+            </a>
+            <form class="flex items-center space-x-3 rtl:space-x-reverse">
+                <input type="text" name="" id="search-items" placeholder="Search..." onkeyup="search()" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg">Search</button>
+            </form>
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="home.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
+                    </li>
+                    <li>
+                        <a href="registration.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Registration</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5500/support.html#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    
+    <div class="max-w-screen-xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 product-list" id="product-list">
+        <div id="parent" class="product-box">
+            <img src="aa-1.jpg" alt="Product Image" class="product-image">
+           <center><h1>Headphone</h1></center> 
+            <label class="product-price">Price 425/-</label>
+            <input type="number" value="1" id="Quantity" class="product-quantity" />
+            <span id="Total" class="product-total">Total: 425/-</span>
+            <div class="product-buttons">
+                <button id="increment" onclick="increment('Quantity', 'Total', 425)" class="product-button increment">+</button>
+                <button id="Decrement" onclick="decrement('Quantity', 'Total', 425)" class="product-button decrement">-</button>
+                <button onclick="addToCart('parent', 'Total', 425)" class="product-button add-to-cart">Add to cart</button>
+                <button onclick="removeFromCart('parent', 'Total', 425)" class="product-button remove-from-cart">Remove from cart</button>
+            </div>
+        </div>
+        
+        <div id="parent2" class="product-box">
+            <img src="hh-2.jpg" alt="Product Image" class="product-image">
+           <center> <h1>Earpods</h1></center>
+            <label class="product-price">Price 560/-</label>
+            <input type="number" value="1" id="Quantity2" class="product-quantity" />
+            <span id="Total2" class="product-total">Total: 560/-</span>
+            <div class="product-buttons">
+                <button id="increment2" onclick="increment('Quantity2', 'Total2', 560)" class="product-button increment">+</button>
+                <button id="Decrement2" onclick="decrement('Quantity2', 'Total2', 560)" class="product-button decrement">-</button>
+                <button onclick="addToCart('parent2', 'Total2', 560)" class="product-button add-to-cart">Add to cart</button>
+                <button onclick="removeFromCart('parent2', 'Total2', 560)" class="product-button remove-from-cart">Remove from cart</button>
+            </div>
+        </div>
+
+        <div id="parent3" class="product-box">
+            <img src="ee-3.jpg" alt="Product Image" class="product-image">
+            <center><h1>Camera</h1></center>
+            <label class="product-price">Price 700/-</label>
+            <input type="number" value="1" id="Quantity3" class="product-quantity" />
+            <span id="Total3" class="product-total">Total: 700/-</span>
+            <div class="product-buttons">
+                <button id="increment3" onclick="increment('Quantity3', 'Total3', 700)" class="product-button increment">+</button>
+                <button id="Decrement3" onclick="decrement('Quantity3', 'Total3', 700)" class="product-button decrement">-</button>
+                <button onclick="addToCart('parent3', 'Total3', 700)" class="product-button add-to-cart">Add to cart</button>
+                <button onclick="removeFromCart('parent3', 'Total3', 700)" class="product-button remove-from-cart">Remove from cart</button>
+            </div>
+        </div>
+
+        <div id="parent4" class="product-box">
+            <img src="gg-1.jpg" alt="Product Image" class="product-image">
+            <center><h1>Foldable Phones</h1></center>
+            <label class="product-price">Price 800/-</label>
+            <input type="number" value="1" id="Quantity4" class="product-quantity" />
+            <span id="Total4" class="product-total">Total: 800/-</span>
+            <div class="product-buttons">
+                <button id="increment4" onclick="increment('Quantity4', 'Total4', 800)" class="product-button increment">+</button>
+                <button id="Decrement4" onclick="decrement('Quantity4', 'Total4', 800)" class="product-button decrement">-</button>
+                <button onclick="addToCart('parent4', 'Total4', 800)" class="product-button add-to-cart">Add to cart</button>
+                <button onclick="removeFromCart('parent4', 'Total4', 800)" class="product-button remove-from-cart">Remove from cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Total Panel -->
+    <center><div id="total-panel" class="total-panel">
+        <h2 class="text-xl font-semibold mb-2">Total Amount</h2>
+        <span id="total-amount" class="text-2xl font-bold">0</span>
+        <input type="text" placeholder="Enter the Coupon Code" id="total-coupon" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 w-full mt-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+        <button id="update-total-amount" onclick="updateTotalAmount()" class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg mt-4">Update Total</button>
+        <a href="http://127.0.0.1:5500/payment.html" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg mt-4" >Proceed to Pay</a>
+    </div> </center>
+    
+
+    <script src="cart.js"></script>
+</body>
+</html>

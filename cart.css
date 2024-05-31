@@ -1,0 +1,140 @@
+.product-box {
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.product-box img {
+    height:200px;
+    width: 50%;
+    margin-left: 8rem;
+    margin-right: 1rem;
+    padding: 20px 0px 15px;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-price, .product-total, .product-quantity, .product-coupon, .product-buttons, .product-button {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.product-price, .product-total {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.product-quantity, .product-coupon {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.product-button {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.product-button.increment {
+    background-color: #3b82f6;
+}
+
+.product-button.decrement {
+    background-color:  #3b82f6;
+}
+
+.product-button.add-to-cart {
+    background-color: #10b981;
+}
+.product-button.remove-from-cart {
+    background-color: red;
+}
+
+.product-button.update-amount {
+    background-color: #fbbf24;
+}
+
+.dark .product-box {
+    background-color: #374151;
+    color: white;
+}
+
+.dark .product-quantity, .dark .product-coupon {
+    background-color: #1f2937;
+    border-color: #4b5563;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+}
+.head {
+    background-color: #37475a;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+#root {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.sidebar {
+    width: 40%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+.total-panel {
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    justify-content: space-evenly;
+}

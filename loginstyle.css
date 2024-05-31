@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+/* Center the form */
+.form-container {
+    width: 100%;
+    max-width: 500px; /* Adjust max-width as needed */
+    margin: 50px auto 0 auto; /* Added top margin */
+    padding: 20px;
+}
+/* Make text boxes larger */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+/* Center submit button */
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 20px;
+}

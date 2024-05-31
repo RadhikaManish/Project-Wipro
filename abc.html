@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+    <h3>Image need to Insert</h3>
+    <label>Price 300/-</label>
+    <input type="number" value="1" id="Quantity">
+    <span id="Total">Total</span><br>
+    <button id="increment" onclick="increment()">Incement</button>
+    <button id="Decrement" onclick="Decrement()">Decrement</button>
+    <button onclick="cartitems()">Add to cart</button>
+    <br>
+    <input type="text" placeholder="Enter the COUPOUN CODE" id="coupoun">
+    <button id="update amount" onclick="update_amount()">Update Amount</button>
+ 
+    </div>
+</body>
+<script>
+ 
+ 
+function increment(){
+    let Quantity=document.getElementById("Quantity");
+    let total=document.getElementById("Total");
+    let currentquantity=parseInt(Quantity.value);
+    let c=Quantity.value=currentquantity+1;
+    let total2=425*c;
+    total.innerHTML=total2;
+ 
+    // Discount applied
+    if(c>5){
+        total2=total2-500;
+        total.innerHTML=total2;
+        alert("Coupon of 500 Applied Successfully")
+    }
+ 
+}
+ 
+function Decrement(){
+    let Quantity=document.getElementById("Quantity");
+    let total=document.getElementById("Total");
+    let currentquantity=parseInt(Quantity.value);
+    let c=Quantity.value=currentquantity-1;
+    let total2=425*c;
+    total.innerHTML=total2;
+}
+ 
+function cartitems(){
+    let parent=document.getElementById("parent")
+    let Total=document.createElement("Total").value;
+    // name.innerText="Item1";
+    parent.append(Total);
+}
+ 
+function update_amount(){
+    let upamount=document.getElementById("coupoun").value;
+    let total=document.getElementById("Total").value;
+    if(upamount == "CODE200"){
+        total=total-200;
+    }
+    console.log(total);
+}
+ 
+ 
+</script>
+</html>

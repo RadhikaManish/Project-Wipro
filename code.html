@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <input type="email" placeholder="Enter your email" id="email">
+  <input type="date" placeholder="Enter your Date of Birth">
+  <input type="password" placeholder="Enter your password" id="password">
+  <button type="button" id="Register">Register Now</button>
+</div>
+<br>
+ 
+<div>
+  <input type="email" placeholder="Enter your email" id="email1">
+  <input type="password" placeholder="Enter your password" id="password1">
+  <button type="button" id="Login">Login</button>
+</div>
+ 
+<button type="button" id="signOut">Signout</button>
+ 
+<img src="img.png" alt="Nothing">
+<input type="file" id="file1" value="Update Image">
+</body>
+ 
+<script type="module">
+ 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCOYSGmwtsMg7gY4QH7ZdsZaWVSRSEk93k",
+    authDomain: "authentication-7a12c.firebaseapp.com",
+    projectId: "authentication-7a12c",
+    storageBucket: "authentication-7a12c.appspot.com",
+    messagingSenderId: "627494738299",
+    appId: "1:627494738299:web:2906ce6ef21f79f37085de",
+    measurementId: "G-SMPSSQH47L"
+  };
+ 
+ 
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth =getAuth();
+ 
+ 
+// New User Registration
+document.getElementById('Register').addEventListener("click",()=>{
+  let email=document.getElementById("email").value;
+  let password=document.getElementById("password").value;
+ 
+  createUserWithEmailAndPassword(auth,email,password)
+  .then((userCredential)=>{
+    const user=userCredential.user;
+    console.log(user);
+    alert("Registration Successfully")
+    window.location.href = "http://127.0.0.1:5500/Home.html"
+  })
+ 
+ 
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+})
+ 
+document.getElementById('Login').addEventListener("click",()=>{
+  let email1=document.getElementById("email1").value;
+  let password1=document.getElementById("password1").value;
+ 
+  signInWithEmailAndPassword(auth,email1,password1)
+  .then((userCredential)=>{
+    const user=userCredential.user;
+    console.log(user);
+    alert(` LoginSucessfully ${email1}`);
+  })
+ 
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert("Enter your Password and name Carefully")
+  });
+})
+ 
+ 
+document.getElementById("signOut").addEventListener("click", function() {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('Sign-out successful.');
+        alert('Sign-out successful.');
+        document.getElementById('logout').style.display = 'none';
+      }).catch((error) => {
+        console.log('An error happened.');
+      });           
+    });
+ 
+ 
+ 
+    
+    // Uploading Image
+ 
+    const image=document.querySelector("img");
+    const file=document.getElementById("file1");
+ 
+    file.addEventListener("change",()=>{
+      image.src=URL.createObjectURL(file.files[0]);
+    })
+ 
+ 
+</script>
+</html>
